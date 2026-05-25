@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Tableau de Bord{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Tableau de Bord</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Bienvenue, {{ user.username }}!</div>
+                <div class="card-body">
+                    <p>Votre rôle: {{ user.role }}</p>
+                    <p>Votre email: {{ user.email }}</p>
+                    <a href="{{ url_for(\'auth.profile\') }}" class="btn btn-primary">Voir le profil</a>
+                    <a href="{{ url_for(\'auth.jwt_info\') }}" class="btn btn-info">Info JWT</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">Statistiques Rapides</div>
+                <div class="card-body">
+                    <p>Tickets ouverts: {{ user.tickets|length }}</p>
+                    <p>Documents téléchargés: {{ user.documents|length }}</p>
+                    <!-- TODO SECURITY: Afficher des statistiques plus sensibles sans contrôle d'accès -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Activité Récente</div>
+                <div class="card-body">
+                    <p>Aucune activité récente à afficher pour le moment.</p>
+                    <!-- TODO SECURITY: Afficher des logs d'activité sensibles sans filtrage -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

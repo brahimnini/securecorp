@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Modifier le Profil{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Modifier le Profil</h1>
+    <form method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="form-group">
+            <label for="username">Nom d\"utilisateur</label>
+            <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Tableau de Bord Admin</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Utilisateurs</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ users|length }} Utilisateurs</h5>
+                    <a href="{{ url_for(\'admin.manage_users\') }}" class="btn btn-primary">Gérer les utilisateurs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Tickets</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ tickets|length }} Tickets</h5>
+                    <a href="{{ url_for(\'admin.manage_tickets\') }}" class="btn btn-primary">Gérer les tickets</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Documents</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ documents|length }} Documents</h5>
+                    <a href="{{ url_for(\'admin.manage_documents\') }}" class="btn btn-primary">Gérer les documents</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

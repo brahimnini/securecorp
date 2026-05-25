@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Bienvenue, {{ name }}!</h1>
+        <p class="lead">Ceci est le portail interne de SecureCorp. Veuillez vous connecter pour accéder aux fonctionnalités.</p>
+        <hr class="my-4">
+        <p>Si vous n'avez pas de compte, vous pouvez vous inscrire.</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for(\'auth.login\') }}" role="button">Connexion</a>
+        <a class="btn btn-secondary btn-lg" href="{{ url_for(\'auth.register\') }}" role="button">Inscription</a>
+    </div>
+{% endblock %}
