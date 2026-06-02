@@ -22,7 +22,7 @@
                 <td>{{ document.filename }}</td>
                 <td>{{ document.original_name }}</td>
                 <td>{{ document.owner.username }}</td>
-                <td>{{ document.uploaded_at.strftime(\"%Y-%m-%d %H:%M\") }}</td>
+                <td>{{ document.uploaded_at.strftime("%Y-%m-%d %H:%M") }}</td>
                 <td>
                     <!-- TODO SECURITY: Ajouter une option de suppression de document sans vérification d\"autorisation -->
                     <button class="btn btn-danger btn-sm" disabled>Supprimer</button>

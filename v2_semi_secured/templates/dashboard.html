@@ -11,8 +11,8 @@
                 <div class="card-body">
                     <p>Votre rôle: {{ user.role }}</p>
                     <p>Votre email: {{ user.email }}</p>
-                    <a href="{{ url_for(\'auth.profile\') }}" class="btn btn-primary">Voir le profil</a>
-                    <a href="{{ url_for(\'auth.jwt_info\') }}" class="btn btn-info">Info JWT</a>
+                    <a href="{{ url_for('auth.profile') }}" class="btn btn-primary">Voir le profil</a>
+                    <a href="{{ url_for('auth.jwt_info') }}" class="btn btn-info">Info JWT</a>
                 </div>
             </div>
         </div>
