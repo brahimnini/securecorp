@@ -1,0 +1,31 @@
+# Environnements virtuels
+venv/
+*/venv/
+
+# Python cache
+__pycache__/
+*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+logs/
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Bases SQLite locales
+*.sqlite3
+*.db
+
+# Configs locales
+*.DS_Store
+
+# VS Code
+.vscode/
+
+# Flask instance folder
+instance/

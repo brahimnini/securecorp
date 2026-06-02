@@ -12,7 +12,7 @@
             <h5 class="card-title">Titre: {{ ticket.title }}</h5>
             <p class="card-text"><strong>Auteur:</strong> {{ ticket.author.username }}</p>
             <p class="card-text"><strong>Statut:</strong> {{ ticket.status }}</p>
-            <p class="card-text"><strong>Créé le:</strong> {{ ticket.created_at.strftime(\"%Y-%m-%d %H:%M\") }}</p>
+            <p class="card-text"><strong>Créé le:</strong> {{ ticket.created_at.strftime("%Y-%m-%d %H:%M") }}</p>
             <hr>
             <p class="card-text"><strong>Contenu:</strong></p>
             <div class="alert alert-light">{{ ticket.content }}</div>
@@ -24,7 +24,7 @@
         <div class="card mb-2">
             <div class="card-body">
                 <p class="card-text"><strong>{{ comment.author.username }}:</strong> {{ comment.content }}</p>
-                <small class="text-muted">{{ comment.created_at.strftime(\"%Y-%m-%d %H:%M\") }}</small>
+                <small class="text-muted">{{ comment.created_at.strftime("%Y-%m-%d %H:%M") }}</small>
             </div>
         </div>
     {% else %}
@@ -42,6 +42,6 @@
 
     <h3 class="mb-3">Export de données (Debug)</h3>
     <p>Ces liens sont pour le débogage et ne devraient pas être accessibles en production.</p>
-    <a href="{{ url_for(\'tickets.export_csv\') }}" class="btn btn-secondary">Exporter en CSV</a>
-    <a href="{{ url_for(\'tickets.export_json\') }}" class="btn btn-secondary">Exporter en JSON</a>
+    <a href="{{ url_for('tickets.export_csv') }}" class="btn btn-secondary">Exporter en CSV</a>
+    <a href="{{ url_for('tickets.export_json') }}" class="btn btn-secondary">Exporter en JSON</a>
 {% endblock %}
