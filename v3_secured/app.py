@@ -10,6 +10,7 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 from markupsafe import escape
+from flask_wtf.csrf import CSRFProtect
 
 # Configuration du logging sécurisé
 if not os.path.exists('logs'):
@@ -21,6 +22,8 @@ log_handler.setLevel(logging.INFO)
 
 def create_app():
     app = Flask(__name__)
+    csrf = CSRFProtect()
+    csrf.init_app(app)
     app.config.from_object(Config)
 
     # Ajout du handler de log à l'application
@@ -72,4 +75,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=False)
+    app.run(debug=True)

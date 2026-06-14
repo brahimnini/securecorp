@@ -1,5 +1,5 @@
 from app import create_app
-from database.models import db, User, Ticket, Comment
+from database.models import db, User, Ticket, Comment, Document
 from werkzeug.security import generate_password_hash
 
 app = create_app()
@@ -30,6 +30,30 @@ with app.app_context():
     comment1 = Comment(content="As-tu essayé de redémarrer ton client VPN ?", ticket_id=ticket1.id, author_id=admin.id)
     
     db.session.add(comment1)
+    db.session.commit()
+
+    # Création des documents
+    doc1 = Document(
+        filename="vpn_guide.pdf",
+        original_name="Guide_VPN.pdf",
+        owner_id=user1.id
+    )
+
+    doc2 = Document(
+        filename="materiel_demande.docx",
+        original_name="Demande_Materiel.docx",
+        owner_id=user2.id
+    )
+
+    doc3 = Document(
+        filename="procedure_admin.txt",
+        original_name="Procedure_Admin.txt",
+        owner_id=admin.id
+    )
+
+    db.session.add(doc1)
+    db.session.add(doc2)
+    db.session.add(doc3)
     db.session.commit()
 
     print("Données de démonstration créées avec succès pour la Version 3.")
